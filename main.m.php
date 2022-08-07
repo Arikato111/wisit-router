@@ -22,7 +22,7 @@ return [
         function SwitchPath(...$Route)
         {
             $func = require('./modules/wisit-router/SwitchPath.php');
-            return $func($Route);
+            return $func(...$Route);
         }
 
         function getParams($position = -1)
