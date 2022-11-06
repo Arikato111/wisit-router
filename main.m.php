@@ -6,17 +6,7 @@
 */
 function getPath()
 {
-    $link = "$_SERVER[REQUEST_URI]";
-    $path = "/";
-    $str_len = strlen($link);
-    for ($i = 1; $i < $str_len; $i++) {
-        if ($link[$i] == '?') {
-            break;
-        } else {
-            $path = $path . $link[$i];
-        }
-    }
-    return $path;
+    return parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 };
 
 
